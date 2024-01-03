@@ -15,9 +15,8 @@ const Forms: FC<IFormsProps> = ({ handleSubmitConvert }) => {
                     <TextField
                          fullWidth
                          onChange={(e) => setStringObject(e.target.value)}
-                         value={stringObject}
                          multiline
-                         rows={10}
+                         rows={15}
                          label="object paste"
                     />
                </Grid>
@@ -25,7 +24,7 @@ const Forms: FC<IFormsProps> = ({ handleSubmitConvert }) => {
                     <TextField
                          label="word list"
                          multiline
-                         rows={10}
+                         rows={15}
                          fullWidth
                          onChange={(e) => setWordListValue(e.target.value)}
                     />

@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@mui/material";
+import { Card, CardContent, CardHeader } from "@mui/material";
 import { extractKeyValues } from "../../helpers/extract-key-values";
 import Forms from "./Forms";
 import Table, { ITableRows } from "../table";
@@ -11,8 +11,6 @@ const ConvertObject = () => {
      }>({ objectString: "", listString: [] });
 
      const handleSubmitConvert = (value: string, list: string) => {
-          console.log(list.split("\n"));
-
           setValue({ objectString: value, listString: list.split("\n") });
      };
 
@@ -34,22 +32,26 @@ const ConvertObject = () => {
 
      return (
           <Card>
+               <CardHeader
+                    title="Convert to string object"
+                    titleTypographyProps={{ textAlign: "center" }}
+               />
                <CardContent>
                     <Forms handleSubmitConvert={handleSubmitConvert} />
                </CardContent>
                <CardContent>
                     <Table
                          columns={[
-                              { field: "key", headerName: "key", width: 100 },
+                              { field: "key", headerName: "key", width: 300 },
                               {
                                    field: "value",
                                    headerName: "object value",
-                                   width: 200
+                                   width: 300
                               },
                               {
                                    field: "valueDuble",
                                    headerName: "double value",
-                                   width: 200
+                                   width: 300
                               }
                          ]}
                          rows={values as unknown as ITableRows[]}
